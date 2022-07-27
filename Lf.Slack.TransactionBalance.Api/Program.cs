@@ -1,3 +1,4 @@
+using Lf.Slack.TransactionBalance.Api;
 using Lf.Slack.TransactionBalance.Application;
 using Lf.Slack.TransactionBalance.Domain;
 using Lf.Slack.TransactionBalance.Infrastructure;
@@ -18,10 +19,15 @@ builder.Services.AddTransient<ITransactionBalanceRepository, TransactionBalanceR
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (builder.Environment.IsDevelopment() || builder.Environment.WithSwagger())
 {
+    app.Logger.LogInformation("Running with Swagger");
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+        options.RoutePrefix = "api-docs";
+    });
 }
 
 app.UseHttpsRedirection();
@@ -30,4 +36,3 @@ app.UseAuthorization();
 
 app.MapControllers();
 app.Run();
-

@@ -25,3 +25,9 @@ sudo docker-compose up
 ### 3. How to play with API from `VSCode`
 Install [Rest Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) `VSCode` extension to send requests by using `api.rest`.
 
+### 4. How to play with API with `Swagger`
+Run API by using either [local setup](#1-how-to-run-locally) or [docker setup](#2-how-to-run-using-docker-compose) and go to
+```sh
+http://localhost:8080/api-docs
+```
+

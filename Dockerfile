@@ -22,4 +22,5 @@ WORKDIR /app
 COPY --from=publish /publish .
 ENV ASPNETCORE_URLS=http://+:8080
 ENV ConnectionStrings:LF_SLACK_CONNECTION_STRING=lfslack.db
+ENV WITH_SWAGGER=true
 ENTRYPOINT ["dotnet", "Lf.Slack.TransactionBalance.Api.dll"]
