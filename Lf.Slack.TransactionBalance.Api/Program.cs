@@ -11,7 +11,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<TransactionBalanceService>();
-builder.Services.AddTransient<ITransactionBalanceRepository, TransactionBalanceRelationalRepository>(_ => new TransactionBalanceRelationalRepository("Data Source=./bin/Debug/net6.0/lfslack.db"));
+
+var dbConnectionString = builder.Configuration.GetConnectionString("LF_SLACK_CONNECTION_STRING");
+builder.Services.AddTransient<ITransactionBalanceRepository, TransactionBalanceRelationalRepository>(_ => new TransactionBalanceRelationalRepository($"Data Source={dbConnectionString}"));
 
 var app = builder.Build();
 
