@@ -22,6 +22,6 @@ sudo docker build -t lf/transaction-balance-api:latest -t lf/transaction-balance
 sudo docker-compose up
 ```
 
-#### 1.1. VSCode
+### 3. How to play with API from `VSCode`
 Install [Rest Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) `VSCode` extension to send requests by using `api.rest`.
 
