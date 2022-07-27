@@ -1,0 +1,26 @@
+POST http://localhost:8080/api/transaction-balance
+Content-Type: application/json
+
+{
+    "transactionId": "355875e9-9858-48f3-993a-ee9fc368fc87",
+    "transactionAmount": 1000
+}
+
+####
+
+PUT http://localhost:8080/api/transaction-balance/refund/355875e9-9858-48f3-993a-ee9fc368fc87/with/99
+
+####
+
+GET http://localhost:8080/api/transaction-balance/355875e9-9858-48f3-993a-ee9fc368fc87
+
+####
+
+GET http://localhost:8080/api/transaction-balance/355875e9-9858-48f3-993a-ee9fc368fc87/rejected-refunds
+
+####
+
+PUT http://localhost:8080/api/transaction-balance/refund/ff18a1d9-b4c1-437f-a9d6-6c33e70aa68d/approve
+####
+
+PUT http://localhost:8080/api/transaction-balance/refund/f36a7f5b-7950-41ae-8048-04fff9c6bbb2/reject

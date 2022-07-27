@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Lf.Slack.TransactionBalance.Infrastructure\Lf.Slack.TransactionBalance.Infrastructure.csproj" />
+    <ProjectReference Include="..\Lf.Slack.TransactionBalance.Domain\Lf.Slack.TransactionBalance.Domain.csproj" />
+    <ProjectReference Include="..\Lf.Slack.TransactionBalance.Application\Lf.Slack.TransactionBalance.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="../infrastructure/lfslack.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>  
+  </ItemGroup>
+  
+
+</Project>
